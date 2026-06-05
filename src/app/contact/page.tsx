@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Clock, Mail, MapPin, Sparkles } from "lucide-react";
+import { WhatsappIcon } from "@/components/ui/brand-icons";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { PageHeader } from "@/components/sections/page-header";
@@ -11,16 +12,31 @@ import { buildMetadata, breadcrumbLd } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Contact — start a project with Praxivo",
   description:
-    "Tell Praxivo what you want to build. We reply within one business day with a clear scope, timeline and price. Serving India, the US and the UK.",
+    "Tell Praxivo what you want to build. We reply within one business day with a clear scope, timeline and price. We work with founders worldwide.",
   path: "/contact",
 });
 
-const infoCards = [
+type InfoCard = {
+  Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  title: string;
+  body: string;
+  href?: string;
+  external?: boolean;
+};
+
+const infoCards: InfoCard[] = [
   {
     Icon: Mail,
     title: "Email us",
     body: site.email,
     href: `mailto:${site.email}`,
+  },
+  {
+    Icon: WhatsappIcon,
+    title: "WhatsApp or call",
+    body: site.phoneDisplay,
+    href: site.socials.whatsapp,
+    external: true,
   },
   {
     Icon: Clock,
@@ -30,7 +46,7 @@ const infoCards = [
   {
     Icon: MapPin,
     title: "Where we work",
-    body: "India · United States · United Kingdom",
+    body: "Remote-first · worldwide",
   },
 ];
 
@@ -74,6 +90,8 @@ export default function ContactPage() {
                     {c.href ? (
                       <a
                         href={c.href}
+                        target={c.external ? "_blank" : undefined}
+                        rel={c.external ? "noopener noreferrer" : undefined}
                         className="mt-0.5 block truncate text-sm text-brand-600 hover:text-brand-700"
                       >
                         {c.body}
@@ -87,7 +105,7 @@ export default function ContactPage() {
 
               <div className="rounded-2xl border border-brand-200 bg-brand-50/60 p-5">
                 <span className="inline-flex size-9 items-center justify-center rounded-lg bg-brand-600 text-white">
-                  <Sparkles className="size-4.5" strokeWidth={1.8} />
+                  <Sparkles className="size-5" strokeWidth={1.8} />
                 </span>
                 <h3 className="mt-3 text-sm font-semibold text-ink">
                   Helpful to include

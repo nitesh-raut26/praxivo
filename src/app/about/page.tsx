@@ -76,7 +76,7 @@ export default function AboutPage() {
             <span className="font-serif italic text-gradient">ships</span>.
           </>
         }
-        description={`${site.name} is a venture studio. We build and run our own AI-powered products, and bring the same craft to clients who want to build theirs — across India, the US and the UK.`}
+        description={`${site.name} is a venture studio. We build and run our own AI-powered products, and bring the same craft to clients who want to build theirs — for founders anywhere in the world.`}
       />
 
       {/* Story */}
@@ -84,7 +84,7 @@ export default function AboutPage() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
             <Reveal>
-              <div className="prose-praxivo space-y-5 text-lg leading-relaxed text-muted">
+              <div className="space-y-5 text-lg leading-relaxed text-muted">
                 <p>
                   Most software dies in a deck. Praxivo started from a simple
                   conviction: the fastest way to prove you can build great
@@ -118,7 +118,7 @@ export default function AboutPage() {
                   {[
                     { k: "Founded", v: site.founded },
                     { k: "Products shipped", v: `${products.length} live` },
-                    { k: "Markets", v: "India · US · UK" },
+                    { k: "Reach", v: "Worldwide" },
                     { k: "Model", v: "Products + services" },
                   ].map((row) => (
                     <div

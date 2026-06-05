@@ -19,7 +19,7 @@ export function Hero() {
       <Container className="pb-16 pt-16 sm:pb-20 sm:pt-24">
         <div className="mx-auto max-w-3xl text-center">
           <Badge tone="brand" dot className="mb-6">
-            Venture studio — India · US · UK
+            Venture studio — building worldwide
           </Badge>
 
           <h1 className="text-balance text-5xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[4.25rem]">
@@ -31,7 +31,7 @@ export function Hero() {
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted sm:text-xl">
             Praxivo is a venture studio. We&apos;ve launched four live products
             across markets, land, devotion and play — and we build web, mobile
-            &amp; AI software for ambitious teams in India, the US and the UK.
+            &amp; AI software for ambitious teams around the world.
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">

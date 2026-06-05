@@ -6,6 +6,7 @@ import { metaBase, organizationLd, websiteLd } from "@/lib/seo";
 import { JsonLd } from "@/components/json-ld";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -100,6 +101,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <WhatsAppButton />
       </body>
     </html>
   );

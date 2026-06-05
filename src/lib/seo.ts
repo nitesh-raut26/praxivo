@@ -58,7 +58,7 @@ export function organizationLd() {
     description: site.description,
     foundingDate: site.founded,
     email: site.email,
-    areaServed: site.locations,
+    areaServed: site.seoRegions,
     sameAs: [site.socials.github, site.socials.linkedin, site.socials.x],
     knowsAbout: [
       "Software development",
@@ -123,6 +123,6 @@ export function serviceLd(name: string, description: string) {
     name,
     description,
     provider: { "@type": "Organization", name: site.name },
-    areaServed: site.locations,
+    areaServed: site.seoRegions,
   };
 }

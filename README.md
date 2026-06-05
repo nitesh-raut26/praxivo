@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Praxivo — venture studio website
 
-## Getting Started
+The premium marketing site for **Praxivo**, the studio behind **StockVision**,
+**LandAI**, **MantraAI** and **StockStump** — and the services arm that builds
+web, mobile & AI products for clients across **India, the US and the UK**.
 
-First, run the development server:
+Built **SEO-first** and **premium-by-default**.
+
+## Stack
+
+Next.js 16 (App Router, React 19, RSC) · TypeScript · Tailwind CSS v4 ·
+`motion` · `lucide-react` · `next/font` (Geist + Instrument Serif) · Vercel.
+
+See **[docs/TECH_STACK_AND_SEO.md](docs/TECH_STACK_AND_SEO.md)** for the full
+rationale, the SEO strategy and the roadmap.
+
+## Develop
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build (verifies SSG + types)
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Edit content (no component changes needed)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Want to change… | Edit |
+|---|---|
+| Brand, nav, contact, socials | `src/lib/site.ts` |
+| Products (cards + detail pages) | `src/lib/products.ts` |
+| Services, process, case studies | `src/lib/services.ts` |
+| Colours, fonts, shadows | `src/app/globals.css` (`@theme`) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Add an entry to `products.ts` and it automatically gets a card, a statically
+generated detail page, a sitemap entry and JSON-LD structured data.
 
-## Learn More
+## SEO built in
 
-To learn more about Next.js, take a look at the following resources:
+Per-page metadata + canonicals · Organization / WebSite / SoftwareApplication /
+Service / Breadcrumb JSON-LD · `sitemap.xml` · `robots.txt` · branded OpenGraph
+image · self-hosted fonts (no CLS) · static HTML on a CDN.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Before launch
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Set the production URL in `src/lib/site.ts`.
+- Replace placeholder socials (GitHub / LinkedIn / X) with real profiles.
+- Wire the contact form to a real backend (Resend / Formspree) — it uses
+  `mailto:` today.
+- Review `privacy` / `terms` (they're starting templates).

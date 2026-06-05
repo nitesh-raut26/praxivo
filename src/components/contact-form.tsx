@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Loader2 } from "lucide-react";
+import { Check } from "lucide-react";
 import { site } from "@/lib/site";
 import { Button } from "@/components/ui/button";
+import { Dropdown } from "@/components/ui/dropdown";
 import { cn } from "@/lib/cn";
 
 const projectTypes = [
@@ -129,26 +130,18 @@ export function ContactForm() {
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
-          <label className="block">
-            <span className="mb-1.5 block text-sm font-medium text-ink">
-              Project type
-            </span>
-            <select value={form.type} onChange={update("type")} className={cn(fieldBase, "appearance-none")}>
-              {projectTypes.map((t) => (
-                <option key={t}>{t}</option>
-              ))}
-            </select>
-          </label>
-          <label className="block">
-            <span className="mb-1.5 block text-sm font-medium text-ink">
-              Budget
-            </span>
-            <select value={form.budget} onChange={update("budget")} className={cn(fieldBase, "appearance-none")}>
-              {budgets.map((b) => (
-                <option key={b}>{b}</option>
-              ))}
-            </select>
-          </label>
+          <Dropdown
+            label="Project type"
+            value={form.type}
+            onChange={(v) => setForm((f) => ({ ...f, type: v }))}
+            options={projectTypes}
+          />
+          <Dropdown
+            label="Budget"
+            value={form.budget}
+            onChange={(v) => setForm((f) => ({ ...f, budget: v }))}
+            options={budgets}
+          />
         </div>
 
         <label className="block">
@@ -170,7 +163,6 @@ export function ContactForm() {
             We&apos;ll never share your details. Reply within one business day.
           </p>
           <Button type="submit" size="lg" withArrow className="w-full sm:w-auto">
-            <Loader2 className="hidden" />
             Send enquiry
           </Button>
         </div>

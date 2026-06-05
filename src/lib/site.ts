@@ -10,19 +10,26 @@ export const site = {
   url: "https://www.praxivo.in",
   tagline: "We build, ship & scale AI products.",
   description:
-    "Praxivo is a venture studio that builds its own AI-powered SaaS products and ships web, mobile and AI software for ambitious teams across India, the US and the UK.",
+    "Praxivo is a venture studio that builds its own AI-powered SaaS products and ships web, mobile and AI software for ambitious teams around the world.",
   shortDescription: "A venture studio building AI products — our own, and yours.",
-  // Contact — update to your real inbox before launch.
-  email: "hello@praxivo.in",
+  // Contact
+  email: "Investors.praxivo@gmail.com",
+  phone: "+919315476985",
+  phoneDisplay: "+91 93154 76985",
+  whatsapp: "919315476985", // digits only, for wa.me links
   bookingUrl: "/contact",
-  locations: ["India", "United States", "United Kingdom"],
+  // Geo signal for SEO only (Organization areaServed + keywords).
+  // Deliberately NOT shown in any visible copy, so we don't appear to
+  // exclude other countries. We rank for these; we serve the world.
+  seoRegions: ["India", "United States", "United Kingdom"],
   founded: "2024",
   // Socials — replace placeholders with your real profiles.
   socials: {
     github: "https://github.com/nitesh-raut26",
     linkedin: "https://www.linkedin.com/in/nitesh-raut",
     x: "https://x.com/praxivo",
-    email: "mailto:hello@praxivo.in",
+    whatsapp: "https://wa.me/919315476985",
+    email: "mailto:Investors.praxivo@gmail.com",
   },
   nav: [
     { label: "Products", href: "/products" },

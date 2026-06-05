@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { Section, SectionHeading, Eyebrow } from "@/components/ui/section";
+import { Section, SectionHeading } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import { Reveal } from "@/components/reveal";
@@ -16,7 +16,7 @@ const stats = [
   { value: "4", label: "Live products in production" },
   { value: "116", label: "Cities modelled by our AI" },
   { value: "25", label: "States & UTs covered" },
-  { value: "3", label: "Markets we build for" },
+  { value: "Global", label: "Built for founders worldwide" },
 ];
 
 export default function Home() {

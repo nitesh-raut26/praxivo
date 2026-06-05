@@ -23,25 +23,28 @@ const sizes: Record<Size, string> = {
   lg: "h-12 px-6 text-[15px]",
 };
 
-type CommonProps = {
+type ButtonOwnProps = {
   variant?: Variant;
   size?: Size;
   className?: string;
   withArrow?: boolean;
+  href?: string;
+  external?: boolean;
   children: React.ReactNode;
 };
 
-type ButtonProps = CommonProps &
-  ({ href: string; external?: boolean } | { href?: undefined; external?: never }) &
-  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof CommonProps | "href">;
+type ButtonProps = ButtonOwnProps &
+  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonOwnProps>;
 
 export function Button({
   variant = "primary",
   size = "md",
   className,
   withArrow,
+  href,
+  external,
   children,
-  ...props
+  ...rest
 }: ButtonProps) {
   const classes = cn(base, variants[variant], sizes[size], className);
   const inner = (
@@ -53,11 +56,7 @@ export function Button({
     </>
   );
 
-  if ("href" in props && props.href) {
-    const { href, external, ...rest } = props as {
-      href: string;
-      external?: boolean;
-    };
+  if (href) {
     if (external) {
       return (
         <a
@@ -71,20 +70,14 @@ export function Button({
       );
     }
     return (
-      <Link href={href} className={classes} {...rest}>
+      <Link href={href} className={classes}>
         {inner}
       </Link>
     );
   }
 
-  const { href: _href, external: _external, ...buttonProps } = props as Record<
-    string,
-    unknown
-  >;
-  void _href;
-  void _external;
   return (
-    <button className={classes} {...buttonProps}>
+    <button className={classes} {...rest}>
       {inner}
     </button>
   );

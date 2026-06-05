@@ -68,43 +68,75 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex size-10 items-center justify-center rounded-xl text-ink ring-1 ring-line-strong md:hidden"
+          className="relative inline-flex size-10 items-center justify-center rounded-xl text-ink ring-1 ring-line-strong transition-colors hover:bg-canvas-soft md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          <Menu
+            className={cn(
+              "size-5 transition-all duration-300 ease-out",
+              open
+                ? "rotate-90 scale-0 opacity-0"
+                : "rotate-0 scale-100 opacity-100",
+            )}
+          />
+          <X
+            className={cn(
+              "absolute size-5 transition-all duration-300 ease-out",
+              open
+                ? "rotate-0 scale-100 opacity-100"
+                : "-rotate-90 scale-0 opacity-0",
+            )}
+          />
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — grid-rows 0fr→1fr animates the real height, buttery-smooth */}
       <div
         className={cn(
-          "overflow-hidden border-t border-line bg-white/95 backdrop-blur md:hidden",
-          open ? "max-h-96" : "max-h-0 border-t-0",
-          "transition-all duration-300",
+          "grid overflow-hidden md:hidden",
+          "transition-[grid-template-rows] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
         )}
       >
-        <nav className="flex flex-col gap-1 px-5 py-4" aria-label="Mobile">
-          {site.nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "rounded-xl px-3 py-2.5 text-[15px] font-medium",
-                isActive(item.href)
-                  ? "bg-canvas-soft text-ink"
-                  : "text-muted hover:bg-canvas-soft hover:text-ink",
-              )}
+        <div className="min-h-0 overflow-hidden">
+          <nav
+            className={cn(
+              "flex flex-col gap-1 border-t border-line bg-white/95 px-5 py-4 backdrop-blur transition-opacity duration-300",
+              open ? "opacity-100" : "opacity-0",
+            )}
+            aria-label="Mobile"
+            aria-hidden={!open}
+          >
+            {site.nav.map((item, i) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                tabIndex={open ? 0 : -1}
+                style={{ transitionDelay: open ? `${i * 45 + 60}ms` : "0ms" }}
+                className={cn(
+                  "rounded-xl px-3 py-2.5 text-[15px] font-medium transition-all duration-300 ease-out",
+                  open ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0",
+                  isActive(item.href)
+                    ? "bg-canvas-soft text-ink"
+                    : "text-muted hover:bg-canvas-soft hover:text-ink",
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div
+              className="mt-2 transition-all duration-300 ease-out"
+              style={{
+                transitionDelay: open ? `${site.nav.length * 45 + 60}ms` : "0ms",
+              }}
             >
-              {item.label}
-            </Link>
-          ))}
-          <div className="mt-2 flex flex-col gap-2">
-            <Button href="/contact" withArrow className="w-full">
-              Start a project
-            </Button>
-          </div>
-        </nav>
+              <Button href="/contact" withArrow className="w-full">
+                Start a project
+              </Button>
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
   );

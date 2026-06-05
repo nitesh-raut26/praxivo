@@ -1,9 +1,15 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Mail } from "lucide-react";
 import { site } from "@/lib/site";
 import { products } from "@/lib/products";
 import { services } from "@/lib/services";
 import { Logo } from "@/components/logo";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  WhatsappIcon,
+  XIcon,
+} from "@/components/ui/brand-icons";
 
 const columns = [
   {
@@ -34,9 +40,10 @@ const columns = [
 ];
 
 const socials = [
-  { label: "GitHub", href: site.socials.github, Icon: Github },
-  { label: "LinkedIn", href: site.socials.linkedin, Icon: Linkedin },
-  { label: "X", href: site.socials.x, Icon: Twitter },
+  { label: "GitHub", href: site.socials.github, Icon: GithubIcon },
+  { label: "LinkedIn", href: site.socials.linkedin, Icon: LinkedinIcon },
+  { label: "X", href: site.socials.x, Icon: XIcon },
+  { label: "WhatsApp", href: site.socials.whatsapp, Icon: WhatsappIcon },
   { label: "Email", href: site.socials.email, Icon: Mail },
 ];
 
@@ -50,6 +57,22 @@ export function SiteFooter() {
             <p className="mt-4 text-pretty text-sm leading-relaxed text-muted">
               {site.description}
             </p>
+
+            <div className="mt-5 space-y-1.5 text-sm">
+              <a
+                href={`mailto:${site.email}`}
+                className="block text-muted transition-colors hover:text-brand-600"
+              >
+                {site.email}
+              </a>
+              <a
+                href={`tel:${site.phone}`}
+                className="block text-muted transition-colors hover:text-brand-600"
+              >
+                {site.phoneDisplay}
+              </a>
+            </div>
+
             <div className="mt-6 flex items-center gap-2">
               {socials.map(({ label, href, Icon }) => (
                 <a
@@ -89,11 +112,7 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
-          <p className="flex items-center gap-2">
-            <span>Building from India</span>
-            <span aria-hidden>·</span>
-            <span>for India, the US &amp; the UK</span>
-          </p>
+          <p>Designed &amp; built for founders worldwide.</p>
         </div>
       </div>
     </footer>

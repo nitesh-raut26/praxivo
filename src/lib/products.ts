@@ -130,7 +130,7 @@ export const products: Product[] = [
       "StockStump turns cricket fandom into a market: every player has a live share price that rises and falls with runs, wickets and strike rate. Start with a virtual balance, build a portfolio, ride the gainers and top the leaderboard.",
     category: "Gaming · Fantasy Sports",
     status: "Beta",
-    url: "https://stockstump-beta.vercel.app/",
+    url: "https://stockstump.vercel.app/",
     futureDomain: "stockstump.praxivo.in",
     accent: "#2563eb",
     icon: "Trophy",

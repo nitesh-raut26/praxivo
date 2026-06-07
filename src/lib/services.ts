@@ -161,4 +161,70 @@ export const caseStudies: CaseStudy[] = [
       "Technical SEO for pan-India reach",
     ],
   },
+  {
+    slug: "rangreza-thread",
+    name: "Rangreza Thread",
+    category: "E-commerce · Heritage Fashion",
+    blurb:
+      "A heritage-fashion storefront for hand-painted Mithila art — saree, dupatta & kurta catalogue with custom commissions and WhatsApp-first ordering.",
+    url: "https://www.rangrezas.com",
+    accent: "#9b2226",
+    icon: "Shirt",
+    role: "Design, build & launch",
+    results: [
+      "Story-led catalogue for hand-painted pieces",
+      "WhatsApp-first ordering & custom commissions",
+      "Technical SEO, sitemap & rich social previews",
+    ],
+  },
+];
+
+/**
+ * Client testimonials — what the founders we've shipped for actually say.
+ * Each maps 1:1 to a {@link CaseStudy} by `slug`, so the social proof and the
+ * work it refers to stay in sync. `accent` mirrors the case study so the
+ * review card carries the same brand colour as the project.
+ *
+ * `author` is the real client founder; the avatar shows their initials. Swap in
+ * a photo later if you want to push authenticity even further.
+ */
+export type Testimonial = {
+  /** Matches a CaseStudy / product slug. */
+  slug: string;
+  quote: string;
+  author: string;
+  role: string;
+  /** Two-letter initials for the avatar. */
+  initials: string;
+  category: string;
+  rating: number;
+  accent: string;
+  url: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    slug: "diyam",
+    quote:
+      "We needed a storefront that felt as premium as our lighting, and Praxivo nailed it. The catalogue is fast and genuinely beautiful, and the WhatsApp ordering is something our customers use every single day. Enquiries started the week we launched, and we now show up across India for the products we care about. They shipped on time and stayed on to help us grow.",
+    author: "Mohan Kumar",
+    role: "Founder, Diyam",
+    initials: "MK",
+    category: "E-commerce · Lighting",
+    rating: 5,
+    accent: "#d97706",
+    url: "https://diyam.co.in/",
+  },
+  {
+    slug: "rangreza-thread",
+    quote:
+      "Our pieces are hand-painted Mithila art, and Praxivo built a site that finally tells that story. The story-led catalogue, the custom-commission flow, the WhatsApp ordering — every detail feels considered and on-brand. We went from no online presence to rich Google and social previews, and customers now tell us the site feels as crafted as the sarees themselves. A team that genuinely cares about the work.",
+    author: "Archana Jha",
+    role: "Founder, Rangreza Thread",
+    initials: "AJ",
+    category: "E-commerce · Heritage Fashion",
+    rating: 5,
+    accent: "#9b2226",
+    url: "https://www.rangrezas.com",
+  },
 ];

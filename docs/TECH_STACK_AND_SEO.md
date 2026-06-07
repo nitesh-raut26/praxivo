@@ -151,7 +151,7 @@ Technical SEO gets you *eligible* to rank; **content** is what actually ranks.
 /                     Home — hero, products, "two ways to work", services, process, stats
 /products             All products grid
 /products/[slug]      StockVision · LandAI · MantraAI · StockStump (SSG)
-/services             Capabilities, process, Diyam case study
+/services             Capabilities, process, Diyam · Rangreza Thread case studies
 /about                Studio story, values, timeline
 /contact              Project enquiry form (mailto)
 /privacy  /terms      Legal (templates — review before relying on them)

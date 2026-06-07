@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import { Reveal } from "@/components/reveal";
 import { PageHeader } from "@/components/sections/page-header";
+import { Testimonials } from "@/components/sections/testimonials";
 import { CtaBand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/json-ld";
 import { services, processSteps, caseStudies } from "@/lib/services";
@@ -201,6 +202,13 @@ export default function ServicesPage() {
           </div>
         </Container>
       </Section>
+
+      {/* What clients say */}
+      <Testimonials
+        eyebrow="In their words"
+        title="What it's like to build with Praxivo."
+        description="The same founders behind the work above — on shipping their products with us."
+      />
 
       <CtaBand
         title="Tell us what you want to build."

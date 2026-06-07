@@ -7,6 +7,7 @@ import { Icon } from "@/components/ui/icon";
 import { Reveal } from "@/components/reveal";
 import { Hero } from "@/components/sections/hero";
 import { TechMarquee } from "@/components/sections/tech-marquee";
+import { Testimonials } from "@/components/sections/testimonials";
 import { CtaBand } from "@/components/sections/cta-band";
 import { ProductCard } from "@/components/product-card";
 import { products } from "@/lib/products";
@@ -215,6 +216,9 @@ export default function Home() {
           </Reveal>
         </Container>
       </Section>
+
+      {/* ── Testimonials ─────────────────────────── */}
+      <Testimonials />
 
       <CtaBand />
     </>

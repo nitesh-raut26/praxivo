@@ -150,6 +150,36 @@ export const products: Product[] = [
     ],
     tech: ["Spring Boot", "Java 17", "PostgreSQL", "Redis", "React"],
   },
+  {
+    slug: "prepdeck",
+    name: "PrepDeck",
+    tagline: "Zero to FAANG — one software-engineering learning path.",
+    summary:
+      "A thirteen-level engineering prep path — from computer basics and DSA to LLD, HLD, databases and system design — with step-through visualizers and concept-to-practice ladders.",
+    description:
+      "PrepDeck turns scattered interview prep into a single guided path. Thirteen levels take you from computer fundamentals through programming, DSA, low- and high-level design, backend, frontend, databases, DevOps and AI — every concept paired with interactive visualizers and practice ladders, in a calm, distraction-free reading theme.",
+    category: "EdTech · Interview Prep",
+    status: "Beta",
+    url: "https://prepdeck-three.vercel.app/",
+    futureDomain: "prepdeck.praxivo.in",
+    accent: "#b45309",
+    icon: "GraduationCap",
+    year: "2026",
+    markets: ["India", "Global"],
+    highlights: [
+      "Thirteen-level path from computer basics to system design",
+      "Step-through visualizers for algorithms & design patterns",
+      "Concept → practice ladders that build real intuition",
+      "Deep dives across DSA, LLD, HLD, databases, backend & frontend",
+      "Calm, distraction-free sepia reading theme",
+    ],
+    stats: [
+      { label: "Learning levels", value: "13" },
+      { label: "Focus", value: "FAANG prep" },
+      { label: "Format", value: "Read + visualize" },
+    ],
+    tech: ["Next.js", "TypeScript", "MDX", "Tailwind CSS", "React"],
+  },
 ];
 
 export function getProduct(slug: string) {

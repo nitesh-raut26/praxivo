@@ -29,8 +29,8 @@ export function Hero() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted sm:text-xl">
-            Praxivo is a venture studio. We&apos;ve launched four live products
-            across markets, land, devotion and play — and we build web, mobile
+            Praxivo is a venture studio. We&apos;ve launched five live products
+            across markets, land, devotion, play and learning — and we build web, mobile
             &amp; AI software for ambitious teams around the world.
           </p>
 
@@ -44,7 +44,7 @@ export function Hero() {
           </div>
 
           <p className="mt-6 text-sm text-subtle">
-            Four products in production. Real users. One studio.
+            Five products in production. Real users. One studio.
           </p>
         </div>
 

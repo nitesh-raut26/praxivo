@@ -53,8 +53,8 @@ const timeline = [
   },
   {
     year: "2026",
-    title: "StockStump & Praxivo",
-    body: "A real-time fantasy trading game joins the lineup, and the portfolio unifies under one studio brand: Praxivo.",
+    title: "StockStump, PrepDeck & Praxivo",
+    body: "A real-time fantasy trading game and PrepDeck — an engineering interview-prep learning path — join the lineup, and the portfolio unifies under one studio brand: Praxivo.",
   },
 ];
 

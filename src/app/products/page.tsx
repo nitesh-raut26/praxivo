@@ -12,7 +12,7 @@ import { buildMetadata, breadcrumbLd } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Products — AI software we built and run",
   description:
-    "Explore Praxivo's live products: StockVision (AI stock research), LandAI (land-growth intelligence), MantraAI (Hindu spiritual app) and StockStump (IPL fantasy trading).",
+    "Explore Praxivo's live products: StockVision (AI stock research), LandAI (land-growth intelligence), MantraAI (Hindu spiritual app), StockStump (IPL fantasy trading) and PrepDeck (FAANG interview-prep learning path).",
   path: "/products",
   keywords: [
     "Praxivo products",
@@ -20,6 +20,7 @@ export const metadata: Metadata = buildMetadata({
     "LandAI",
     "MantraAI",
     "StockStump",
+    "PrepDeck",
     "AI SaaS products",
   ],
 });
@@ -35,7 +36,7 @@ export default function ProductsPage() {
       />
       <PageHeader
         eyebrow="Products"
-        title="Four live products. One studio."
+        title="Five live products. One studio."
         description="Each of these started as an idea and shipped to real users — proof that we can design, build and run software end to end."
       />
 

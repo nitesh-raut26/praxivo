@@ -14,7 +14,7 @@ import { products } from "@/lib/products";
 import { services, processSteps } from "@/lib/services";
 
 const stats = [
-  { value: "4", label: "Live products in production" },
+  { value: "5", label: "Live products in production" },
   { value: "116", label: "Cities modelled by our AI" },
   { value: "25", label: "States & UTs covered" },
   { value: "Global", label: "Built for founders worldwide" },
@@ -33,7 +33,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Our products"
               title="Software we built, launched and run."
-              description="Four live products across fintech, proptech, devotion and gaming — our proof that we can take an idea from zero to real users."
+              description="Five live products across fintech, proptech, devotion, gaming and edtech — our proof that we can take an idea from zero to real users."
             />
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

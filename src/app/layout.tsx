@@ -52,6 +52,7 @@ export const metadata: Metadata = {
     "LandAI",
     "MantraAI",
     "StockStump",
+    "PrepDeck",
   ],
   alternates: { canonical: "/" },
   openGraph: {

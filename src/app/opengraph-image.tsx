@@ -104,6 +104,8 @@ export default function OpengraphImage() {
             <span>MantraAI</span>
             <span>·</span>
             <span>StockStump</span>
+            <span>·</span>
+            <span>PrepDeck</span>
           </div>
         </div>
       </div>

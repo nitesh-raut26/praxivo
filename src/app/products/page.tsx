@@ -12,7 +12,7 @@ import { buildMetadata, breadcrumbLd } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Products — AI software we built and run",
   description:
-    "Explore Praxivo's live products: StockVision (AI stock research), LandAI (land-growth intelligence), MantraAI (Hindu spiritual app), StockStump (IPL fantasy trading) and PrepDeck (FAANG interview-prep learning path).",
+    "Explore Praxivo's live products: StockVision (AI stock research), LandAI (land-growth intelligence), MantraAI (Hindu spiritual app), StockStump (IPL fantasy trading) and PrepDeck (interview-prep learning path).",
   path: "/products",
   keywords: [
     "Praxivo products",
